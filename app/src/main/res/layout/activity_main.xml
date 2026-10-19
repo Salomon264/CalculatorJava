@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/screen_padding"
+    tools:context=".MainActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding"
+        tools:context=".MainActivity">
+
+        <!-- История операции: «125 +» -->
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:maxLines="1"
+            android:minLines="1"
+            android:textColor="@color/calc_text_secondary"
+            android:textSize="@dimen/expression_text_size" />
+
+        <!-- Дисплей: текущее число, шрифт сжимается при длинном числе -->
+        <TextView
+            android:id="@+id/tvDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="end|bottom"
+            android:maxLines="1"
+            android:text="@string/display_default"
+            android:textColor="?attr/colorOnSurface"
+            app:autoSizeMaxTextSize="@dimen/display_max_text_size"
+            app:autoSizeMinTextSize="@dimen/display_min_text_size"
+            app:autoSizeTextType="uniform" />
+
+        <!-- Строка 2: 7 8 9 × -->
+        <LinearLayout style="@style/CalcRow">
+            <Button android:id="@+id/btn7" style="@style/CalcButton" android:text="@string/key_7" />
+            <Button android:id="@+id/btn8" style="@style/CalcButton" android:text="@string/key_8" />
+            <Button android:id="@+id/btn9" style="@style/CalcButton" android:text="@string/key_9" />
+        </LinearLayout>
+
+        <!-- Строка 3: 4 5 6 − -->
+        <LinearLayout style="@style/CalcRow">
+            <Button android:id="@+id/btn4" style="@style/CalcButton" android:text="@string/key_4" />
+            <Button android:id="@+id/btn5" style="@style/CalcButton" android:text="@string/key_5" />
+            <Button android:id="@+id/btn6" style="@style/CalcButton" android:text="@string/key_6" />
+        </LinearLayout>
+
+        <!-- Строка 4: 1 2 3 + -->
+        <LinearLayout style="@style/CalcRow">
+            <Button android:id="@+id/btn1" style="@style/CalcButton" android:text="@string/key_1" />
+            <Button android:id="@+id/btn2" style="@style/CalcButton" android:text="@string/key_2" />
+            <Button android:id="@+id/btn3" style="@style/CalcButton" android:text="@string/key_3" />
+            <Button android:id="@+id/btnAdd" style="@style/CalcButton.Operator" android:text="@string/key_add" />
+        </LinearLayout>
+
+        <!-- Строка 5: ± 0 . = -->
+        <LinearLayout style="@style/CalcRow">
+            <Button android:id="@+id/btn0" style="@style/CalcButton" android:text="@string/key_0" />
+            <Button android:id="@+id/btnEquals" style="@style/CalcButton.Operator" android:text="@string/key_equals" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

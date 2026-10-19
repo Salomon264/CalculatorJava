@@ -1,0 +1,26 @@
+# Gradle & Build
+.gradle/
+build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration (содержит путь к SDK на вашем Mac)
+local.properties
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+# Если хотите оставить только общие настройки стиля кода, можно игнорировать всё, кроме:
+# !.idea/codeStyles/
+# !.idea/inspectionProfiles/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Keystore (если используете подпись, ключи не должны попадать в репозиторий)
+*.jks
+*.keystore
